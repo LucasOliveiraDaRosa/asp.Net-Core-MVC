@@ -32,7 +32,7 @@ namespace SalesWebMvc.Models
         public Department Department { get; set; }
         [Display(Name = "Departamento")]
         public int DepartmentId { get; set; }
-        public ICollection<SallesRecord> Salles { get; set; } = new List<SallesRecord>();
+        public ICollection<SalesRecord> Salles { get; set; } = new List<SalesRecord>();
 
         public Seller()
         {
@@ -48,12 +48,12 @@ namespace SalesWebMvc.Models
             Department = department;
         }
 
-        public void AddSales(SallesRecord sr)
+        public void AddSales(SalesRecord sr)
         {
             Salles.Add(sr);
         }
 
-        public void RemoveSales(SallesRecord sr)
+        public void RemoveSales(SalesRecord sr)
         {
             Salles.Remove(sr);
         }
