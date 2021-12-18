@@ -4,17 +4,26 @@ using System.Linq;
 using SalesWebMvc.Models.Enums;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace SalesWebMvc.Models
 {
     public class Seller
     {
         public int Id { get; set; }
+        [Display(Name = "Nome")]
         public string Name { get; set; }
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        [Display(Name = "Data de aniversário")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BithDate { get; set; }
+        [Display(Name = "Salário")]
+        [DisplayFormat( DataFormatString ="{0:F2}")]
         public double BaseSalary { get; set; }
         public Department Department { get; set; }
+        [Display(Name = "Departamento")]
         public int DepartmentId { get; set; }
         public ICollection<SallesRecord> Salles { get; set; } = new List<SallesRecord>();
 
